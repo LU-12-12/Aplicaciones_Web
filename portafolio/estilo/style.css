@@ -1,0 +1,106 @@
+body {
+    background-color: #f3e5f5;
+    color: #4a148c; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #e1bee7;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #ce93d8;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #6a1b9a;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ba68c8;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    background-color: #ffffff; /* Acento neutro */
+    border-radius: 15px; /* Border-radius */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    color: #7b1fa2;
+}
+
+/* 2. Selección por Clase (Para los artículos de proyectos) */
+.proyecto-card {
+    border: 2px solid #ce93d8; /* CSS Borders */
+    padding: 15px; /* CSS Padding */
+    margin-bottom: 20px; /* CSS Margins */
+    border-radius: 10px;
+    background-color: #fdf7ff;
+}
+
+/* 3. Selección por ID (Para elementos únicos como la foto) */
+#foto-perfil {
+    display: block;
+    margin: 0 auto;
+    border: 5px solid #e1bee7;
+    border-radius: 50%; /* Foto circular */
+    transition: transform 0.3s;
+}
+
+#foto-perfil:hover {
+    transform: scale(1.05);
+}
+
+/* Unidades y Posicionamiento */
+h1 {
+    font-size: 2.5rem; /* CSS Units */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ce93d8;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+button {
+    background-color: #9c27b0;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #7b1fa2;
+}
