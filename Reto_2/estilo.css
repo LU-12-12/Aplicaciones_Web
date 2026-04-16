@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* Este proyecto esta inspirado visualmente en el musical de Epic:The Musical. */
+
+:root {
+    --gold: #FFD700;
+    --deep-blue: #020617;
+    --lightning-blue: #00d4ff;
+    --blood-red: #ff0033;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background: var(--deep-blue);
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+        url('https://www.transparenttextures.com/patterns/dark-matter.png');
+    color: white;
+    font-family: 'Cinzel', serif;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: var(--gold);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden; /* Para el efecto de rayo */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Efecto Rayo de Zeus en el título al pasar el mouse */
+h1:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    animation: lightning-strike 0.6s ease-out;
+}
+
+@keyframes lightning-strike {
+    to { left: 100%; }
+}
+
+.category-card {
+    background: var(--glass);
+    border: 2px solid var(--gold);
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    /* Animación de entrada */
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.category-title {
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.activity-item {
+    margin-bottom: 20px;
+}
+
+.activity-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #1a1a1a;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.progress-fill {
+    height: 100%;
+    transition: width 1.5s ease-in-out;
+}
+
+.progress-fill.safe {
+    background: linear-gradient(90deg, var(--lightning-blue), #0044ff);
+    box-shadow: 0 0 10px var(--lightning-blue);
+}
+
+.progress-fill.danger {
+    background: linear-gradient(90deg, var(--blood-red), #660000);
+    box-shadow: 0 0 10px var(--blood-red);
+}
+
+.category-card:hover {
+    transform: scale(1.02);
+    border-color: white;
+    transition: 0.3s;
+}
