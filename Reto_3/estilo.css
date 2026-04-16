@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+:root {
+    --sponge-yellow: #effd5f;
+    --patrick-pink: #ff8fb1;
+    --ocean-blue: #0080ff;
+    --deep-sea: #002244;
+    --sand: #f4d03f;
+    --neon-bubble: #00d4ff;
+}
+
+body {
+    background: var(--deep-sea);
+    background-image: radial-gradient(circle, var(--ocean-blue) 0%, var(--deep-sea) 100%);
+    font-family: 'Fredoka One', cursive;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.card {
+    background: var(--sand);
+    border: 10px solid var(--sponge-yellow);
+    border-radius: 50px;
+    padding: 40px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 20px 0 #c2a632, 0 0 50px rgba(0, 212, 255, 0.4);
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    color: #ff4500;
+    text-shadow: 4px 4px 0px var(--sponge-yellow);
+    font-size: 3rem;
+    margin-top: 0;
+}
+
+.input-wrapper {
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    color: var(--deep-sea);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+input {
+    width: 80%;
+    padding: 15px 25px;
+    border-radius: 30px;
+    border: 4px solid var(--ocean-blue);
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    outline: none;
+    transition: 0.3s;
+    box-shadow: 0 5px 0 var(--ocean-blue);
+}
+
+input:focus {
+    border-color: var(--patrick-pink);
+    box-shadow: 0 5px 0 var(--patrick-pink);
+    background: #fffef0;
+}
+
+#mural-display {
+    background: #000;
+    color: var(--sponge-yellow);
+    font-family: 'Courier New', monospace; /* Esencial para el ASCII */
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 30px;
+    border: 6px double var(--patrick-pink);
+    border-radius: 20px;
+    display: inline-block;
+    white-space: pre; /* Respeta los espacios calculados en JS */
+    box-shadow: inset 0 0 20px rgba(255, 143, 177, 0.5);
+    cursor: crosshair;
+}
+
+@keyframes shake {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02) rotate(1deg); }
+    100% { transform: scale(1); }
+}
+
+.hint {
+    color: #887a2a;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
