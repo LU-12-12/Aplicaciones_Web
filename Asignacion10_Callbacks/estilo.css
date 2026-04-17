@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Signika+Negative:wght@400;700&display=swap');
+
+:root {
+    --p-wood: #7d6b5d;
+    --p-wood-dark: #4a3f35;
+    --p-ghost: #1c1c1c;
+    --p-eye: #ff80ab;
+    --p-leaf: #388e3c;
+    --neon-blue: #00e5ff;
+}
+
+body {
+    background: #050505;
+    background-image: radial-gradient(circle at center, #1a0b2e 0%, #050505 100%);
+    color: #eee;
+    font-family: 'Signika Negative', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* --- PHANTUMP CSS ART --- */
+
+#phantump-loader {
+    position: fixed;
+    width: 120px;
+    height: 180px;
+    z-index: 2000;
+    transition: all 1.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation: floatPhantump 3s infinite ease-in-out;
+}
+
+/* Transiciones de estado */
+#phantump-loader.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.8);
+}
+
+#phantump-loader.corner {
+    top: 30px;
+    right: 30px;
+    left: auto;
+    transform: translate(0, 0) scale(0.7);
+}
+
+/* Cabeza (Tocón) */
+.head {
+    width: 90px;
+    height: 85px;
+    background: var(--p-wood);
+    border-radius: 45% 45% 35% 35%;
+    position: relative;
+    margin: 0 auto;
+    z-index: 5;
+    box-shadow: inset -8px -10px 0 var(--p-wood-dark);
+}
+
+.eye-socket {
+    width: 22px;
+    height: 32px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eye-socket.left { left: 15px; }
+.eye-socket.right { right: 15px; }
+
+.eye-glow {
+    width: 10px;
+    height: 16px;
+    background: var(--p-eye);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--p-eye);
+    animation: blinkEyes 4s infinite;
+}
+
+/* Ramas y Hojas */
+.horn {
+    width: 12px;
+    height: 50px;
+    background: var(--p-wood);
+    position: absolute;
+    top: -15px;
+    border-radius: 5px;
+}
+.horn.left { left: 0; transform: rotate(-30deg); border-radius: 10px 0 0 0; }
+.horn.right { right: 0; transform: rotate(30deg); border-radius: 0 10px 0 0; }
+
+.leaf {
+    width: 20px;
+    height: 12px;
+    background: var(--p-leaf);
+    border-radius: 50% 0;
+    position: absolute;
+    top: 15px;
+}
+
+/* Cuerpo Fantasmal (Humo) */
+.ghost-core {
+    width: 45px;
+    height: 80px;
+    background: var(--p-ghost);
+    margin: -15px auto 0;
+    border-radius: 20px 20px 50% 50%;
+    position: relative;
+    z-index: 1;
+    filter: blur(0.5px);
+}
+
+.spirit-tail {
+    width: 100%;
+    height: 100%;
+    background: var(--p-ghost);
+    position: absolute;
+    bottom: -30px;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(15deg);
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+
+/* --- INTERFAZ --- */
+
+.mistic-container {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 1s ease 2s;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    border: 6px solid var(--p-wood-dark);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 0 40px var(--neon-blue);
+}
+
+h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 4rem;
+    color: var(--neon-blue);
+    text-shadow: 3px 3px 0 #000;
+    margin: 0;
+}
+
+kbd {
+    background: #111;
+    color: var(--neon-blue);
+    border: 3px solid var(--neon-blue);
+    padding: 10px 25px;
+    font-size: 2.5rem;
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0 0 15px var(--neon-blue);
+    font-family: 'Creepster', cursive;
+}
+
+/* Animaciones */
+@keyframes floatPhantump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+@keyframes blinkEyes {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+}
