@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buggy-Core Energy System</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="main-stage">
+        <header class="main-header">
+            <div class="nose-logo"></div>
+            <h1>CORE ENERGY STABILIZER</h1>
+        </header>
+        
+        <div class="controls">
+            <div class="input-group">
+                <label>ALTURA</label>
+                <input type="number" id="height-input" min="1" max="25" value="7">
+            </div>
+            <div class="input-group">
+                <label>SÍMBOLO</label>
+                <input type="text" id="symbol-input" maxlength="1" value="X">
+            </div>
+        </div>
+
+        <main class="tower-container">
+            <pre id="tower-display">SISTEMA EN ESPERA...</pre>
+        </main>
+
+        <footer class="control-panel">
+            <button class="flashy-button" onclick="startEnergySurge()">DESPLEGAR ENERGÍA</button>
+        </footer>
+    </div>
+
+    <script src="logica.js"></script>
+</body>
+</html>
