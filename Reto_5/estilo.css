@@ -1,0 +1,90 @@
+:root {
+    --stark-red: #d40000;
+    --stark-gold: #ffcf40;
+    --iron-blue: #00f2ff;
+    --glass-bg: rgba(20, 20, 20, 0.9);
+}
+
+body {
+    background-color: #050505;
+    background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: var(--iron-blue);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hud-container {
+    width: 90vw;
+    max-width: 1000px;
+    height: 80vh;
+    border: 3px double var(--stark-red);
+    background: var(--glass-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 40px rgba(212, 0, 0, 0.3);
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+/* Sugerencia 1: Estilo de Logs */
+.logs-container {
+    height: 100%;
+    background: #000;
+    border: 1px solid var(--stark-red);
+    padding: 10px;
+    font-size: 0.8rem;
+    overflow-y: auto;
+    color: #0f0; /* Color terminal clásico */
+}
+
+/* Sugerencia 2: Estilo Maximalista de Botas */
+.boot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.boot-card {
+    height: 80px;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    animation: boot-in 0.5s ease-out;
+}
+
+.boot-card.I { border-color: var(--iron-blue); background: rgba(0, 242, 255, 0.1); }
+.boot-card.R { border-color: var(--stark-red); background: rgba(212, 0, 0, 0.1); }
+
+/* Animaciones */
+@keyframes boot-in {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.stark-button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background: var(--stark-red);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+}

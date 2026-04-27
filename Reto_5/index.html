@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stark Industries - HUD v2.0</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="hud-container">
+        <header>
+            <div class="top-bar">
+                <span class="system-id">STARK-7-INV</span>
+                <span class="auth-status">AUTHORIZED: TONY STARK</span>
+            </div>
+            <h1 class="glitch">BOOT ANALYZER</h1>
+        </header>
+
+        <main class="grid-layout">
+            <section class="terminal-section">
+                <div class="status-bar">SYSTEM LOGS</div>
+                <div id="logs" class="logs-container">
+                    > Esperando secuencia de inicio...
+                </div>
+            </section>
+
+            <section class="inventory-section">
+                <div class="status-bar">VISUAL SCANNER</div>
+                <div id="boot-visuals" class="boot-grid">
+                    </div>
+            </section>
+        </main>
+
+        <footer>
+            <div id="final-result" class="result-summary">PARES LISTOS: 0</div>
+            <button onclick="iniciarProtocolo()" class="stark-button">EJECUTAR PROTOCOLO MARK LXXXV</button>
+        </footer>
+    </div>
+
+    <script src="logica.js"></script>
+</body>
+</html>
