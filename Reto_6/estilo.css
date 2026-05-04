@@ -1,0 +1,120 @@
+/* ==========================================
+   VARIABLES GLOBALES (Paleta de colores)
+   ========================================== */
+:root {
+    --bg-dark: #08120b;         /* Fondo principal de la página */
+    --bg-panel: #113622;        /* Fondo del contenedor del juego */
+    --btn-hover: #205c3b;       /* Color de fondo para hover de botones */
+    --text-accent: #d4af37;     /* Color de texto principal y bordes */
+    --text-accent-hover: #f0ce5c; /* Color de realce para interacciones */
+}
+
+/* ==========================================
+   ESTILOS BASE
+   ========================================== */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-accent);
+    font-family: 'Courier New', Courier, monospace; /* Fuente monoespaciada recomendada para alinear los caracteres de la cuadrícula */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* ==========================================
+   CONTENEDORES
+   ========================================== */
+.game-container {
+    background-color: var(--bg-panel);
+    border: 2px solid var(--text-accent);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+    width: 350px;
+}
+
+/* ==========================================
+   TIPOGRAFÍA
+   ========================================== */
+h1 {
+    margin-top: 0;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+/* ==========================================
+   TABLERO DEL JUEGO
+   ========================================== */
+.board {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--text-accent);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    letter-spacing: 5px;
+    line-height: 1.5;
+    white-space: pre; /* Propiedad crucial: Mantiene los espacios en blanco y los saltos de línea renderizados por JS */
+}
+
+/* ==========================================
+   CONTROLES (Botones)
+   ========================================== */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.horizontal-controls {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    background-color: var(--bg-dark);
+    color: var(--text-accent);
+    border: 1px solid var(--text-accent);
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease; /* Suaviza la transición del estado hover */
+}
+
+button:hover {
+    background-color: var(--btn-hover);
+    color: var(--bg-dark);
+    border-color: var(--text-accent-hover);
+    box-shadow: 0 0 10px var(--text-accent-hover);
+}
+
+/* ==========================================
+   PANEL DE RESULTADOS
+   ========================================== */
+.result-box {
+    background-color: var(--bg-dark);
+    padding: 15px;
+    border: 1px dashed var(--text-accent);
+    font-weight: bold;
+}
+
+#resultado {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 5px var(--text-accent);
+}

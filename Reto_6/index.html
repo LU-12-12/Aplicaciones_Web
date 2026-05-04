@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Serpiente</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- Contenedor principal de la aplicación -->
+    <div class="game-container">
+        <h1>Snake Game</h1>
+        <p class="subtitle">Utiliza los botones para mover la serpiente y atrapar al ratón.</p>
+        
+        <!-- Elemento donde el script inyectará la cuadrícula del juego -->
+        <div id="board-display" class="board"></div>
+
+        <!-- Panel de controles de dirección -->
+        <div class="controls">
+            <button onclick="executeMove('U')">Arriba (U)</button>
+            <div class="horizontal-controls">
+                <button onclick="executeMove('L')">Izquierda (L)</button>
+                <button onclick="executeMove('R')">Derecha (R)</button>
+            </div>
+            <button onclick="executeMove('D')">Abajo (D)</button>
+        </div>
+
+        <!-- Área de retroalimentación para el usuario -->
+        <div class="result-box">
+            Estado del último movimiento: <br>
+            <span id="resultado">Esperando acción...</span>
+        </div>
+    </div>
+
+    <!-- Vinculación de la lógica del juego -->
+    <script src="logica.js"></script>
+</body>
+</html>
