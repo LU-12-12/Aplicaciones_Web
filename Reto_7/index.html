@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>MATRIX_DECODER // PROTOCOLO_Z</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <canvas id="canvasRain"></canvas>
+    
+    <main class="terminal-container">
+        <div class="scanline"></div>
+        <header class="terminal-header">
+            <div class="status-group">
+                <span class="status-dot"></span>
+                <span class="pulse-text">SISTEMA EN LÍNEA</span>
+            </div>
+            <h1>DECODE_OS v3.0 [K-MAX]</h1>
+        </header>
+
+        <section class="interface">
+            <div class="input-area">
+                <label>> RASTREAR ARCHIVO COMPROMETIDO:</label>
+                <input type="text" id="filenameInput" placeholder="ID_NOMBRE.EXT.RUIDO" spellcheck="false">
+            </div>
+
+            <button id="decodeBtn">EJECUTAR SECUENCIA DE DESCRIPTADO</button>
+
+            <div class="results-grid">
+                <div class="output-box">
+                    <p class="label">_NOMBRE_RECUPERADO:</p>
+                    <div id="resultDisplay" class="result-text">---</div>
+                </div>
+                
+                <!-- Funcionalidad extra: El Analizador de Riesgo -->
+                <div class="risk-box" id="riskBox">
+                    <p class="label">_NIVEL_DE_RIESGO:</p>
+                    <div id="riskLevel">PENDIENTE...</div>
+                    <div class="progress-bar"><div id="riskBar"></div></div>
+                </div>
+            </div>
+
+            <div id="logTerminal" class="mini-logs">
+                <p>> INICIALIZANDO KERNEL...</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>LOC: CIUDAD OBREGÓN // SECTOR: ITSON</span>
+            <span id="timestamp"></span>
+        </footer>
+    </main>
+
+    <script src="logica.js"></script>
+</body>
+</html>
