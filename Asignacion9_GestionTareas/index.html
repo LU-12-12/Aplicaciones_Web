@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌴 Gestión de Tareas Playera</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <div class="beach-container">
+    <h1>🌊 Gestión de Tareas: Modo Playa 🏖️</h1>
+    <p class="subtitle">Organiza tus pendientes bajo la sombra de una palmera</p>
+
+    <div class="card">
+      <h2>🐚 Menú del Chiringuito</h2>
+      <p>Selecciona una opción del menú interactivo (Simulación del Switch):</p>
+      <div class="row">
+        <button onclick="ejecutarOpcion(1)">1. Mostrar Todas</button>
+        <button onclick="ejecutarOpcion(2)">2. Mostrar Completadas</button>
+        <button onclick="ejecutarOpcion(3)">3. Mostrar Pendientes</button>
+        <button onclick="ejecutarOpcion(99)" class="btn-warning">Opcion Inválida</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🥥 Métodos del Sistema (this.tareas)</h2>
+      <div class="row">
+        <button onclick="sistema.mostrarTareas()">Sistema: Ver Todas</button>
+        <button onclick="sistema.mostrarCompletadas()">Sistema: Ver Completadas</button>
+        <button onclick="sistema.mostrarPendientes()">Sistema: Ver Pendientes</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🍍 Estadísticas de la Arena</h2>
+      <div class="row">
+        <button onclick="probarNombres()">Obtener sólo Nombres (map)</button>
+        <button onclick="probarContar()">Contar Total de Tareas</button>
+        <button onclick="verificarEstadoArreglo()">Verificar Estado General</button>
+      </div>
+    </div>
+
+    <h2>🌴 Bitácora de la Costa (Consola en Pantalla)</h2>
+    <div class="output" id="consola-playa">// Las olas traerán los resultados aquí...</div>
+  </div>
+
+  <script src="logica.js"></script>
+</body>
+</html>

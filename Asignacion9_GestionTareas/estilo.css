@@ -1,0 +1,106 @@
+/* Importamos una tipografía fresca y veraniega */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  background: linear-gradient(180deg, #e0f2fe 0%, #fef08a 100%); /* Degradado de cielo a arena */
+  color: #0f172a;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+.beach-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #0369a1; /* Azul océano profundo */
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.2rem;
+  text-shadow: 2px 2px 0px #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #0284c7;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+h2 {
+  color: #0284c7; /* Azul olas */
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+/* Tarjetas estilo toalla de playa o madera de chiringuito */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  border: 2px solid #bae6fd;
+  border-radius: 24px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(3, 105, 161, 0.1);
+}
+
+/* Botones playeros */
+button {
+  background: #38bdf8; /* Azul cielo brillante */
+  color: white;
+  border: none;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px; /* Bordes redondeados tipo flotador */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px -1px rgba(56, 189, 248, 0.4);
+}
+
+button:hover {
+  background: #0ea5e9;
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 6px 12px -1px rgba(14, 165, 233, 0.5);
+}
+
+button:active {
+  transform: scale(0.98) translateY(0);
+}
+
+/* Botón de advertencia estilo cangrejo/alerta */
+button.btn-warning {
+  background: #f87171;
+  box-shadow: 0 4px 6px -1px rgba(248, 113, 113, 0.4);
+}
+button.btn-warning:hover {
+  background: #ef4444;
+}
+
+.row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+/* Consola o bitácora imitando agua marina profunda */
+.output {
+  background: #0c4a6e; /* Fondo marino profundo */
+  border: 4px solid #fef08a; /* Borde de arena dorada */
+  border-radius: 20px;
+  padding: 1.2rem;
+  color: #f0fdf4; /* Texto claro */
+  font-family: monospace; /* Preservamos mono para estructura de logs */
+  font-size: 1.1rem;
+  min-height: 100px;
+  white-space: pre-wrap;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.5;
+}
