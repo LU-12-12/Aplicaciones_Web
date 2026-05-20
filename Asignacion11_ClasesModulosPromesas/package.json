@@ -1,0 +1,13 @@
+{
+  "name": "js-proyecto",
+  "version": "1.0.0",
+  "description": "Proyecto de práctica: módulos, clases, promesas y async/await",
+  "type": "module",
+  "scripts": {
+    "modulos": "node modulos/main-modulos.js",
+    "clases": "node clases/clases.js",
+    "promesas": "node promesas/promesas.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
