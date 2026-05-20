@@ -1,76 +1,72 @@
-/**
- * SISTEMA ESPIRITUAL DE PHANTUMP
- * Razonamiento: 
- * 1. Controlamos la transición del Pokémon con 'load'.
- * 2. Ejecutamos la cadena de ejercicios con la tecla 'F'.
- */
-
-// --- 1. TRANSICIÓN INICIAL ---
-window.addEventListener('load', () => {
-    const phantump = document.getElementById('phantump-loader');
-    const container = document.querySelector('.mistic-container');
-
-    // Tiempo de "manifestación" antes de moverse a la esquina
-    setTimeout(() => {
-        phantump.classList.remove('center');
-        phantump.classList.add('corner');
-        
-        // Revelamos la interfaz del ritual
-        container.style.opacity = "1";
-        container.style.transform = "scale(1)";
-    }, 2500);
-});
-
-// --- 2. ACTIVACIÓN DEL RITUAL POR TECLADO ---
-window.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 'f') {
-        ejecutarGrimorio();
-    }
-});
-
-function ejecutarGrimorio() {
-    console.clear();
-    console.log("--- 🪵 EL TOCÓN SAGRADO RESPONDE A LA TECLA 'F' ---");
-
-    // EJERCICIO 1: Temporizador
-    console.log("🕯️ Invocando sabiduría ancestral... (3s)");
-    setTimeout(() => {
-        console.log("🍂 Mensaje espiritual recibido.");
-
-        // EJERCICIO 2: Operación Matemática
-        matematicasEspirituales(25, 17, (resultado) => {
-            console.log(`🔥 El fuego fatuo revela la suma de energías: ${resultado}`);
-
-            // EJERCICIO 3: Receta de Poción (Secuencial)
-            console.log("--- INICIANDO ALQUIMIA DE BOSQUE ---");
-            cortarRaices(() => {
-                destilarEsencia(() => {
-                    console.log("3. 🧪 ¡Poción de Sombra terminada!");
-                    console.log("-----------------------------------------");
-                });
-            });
-        });
-    }, 3000);
+// SECCIÓN 1: TEMPORIZADOR
+function esperarYMostrar(segundos, mensaje, callback) {
+  setTimeout(function () {
+    callback(mensaje);
+  }, segundos * 1000);
 }
 
-// --- FUNCIONES DE APOYO ---
+function iniciarTemporizador() {
+  const segundos = parseInt(document.getElementById("secs").value);
+  const output = document.getElementById("out1");
+  output.textContent = `Esperando ${segundos} segundos...`;
 
-function matematicasEspirituales(a, b, callback) {
-    callback(a + b);
+  esperarYMostrar(segundos, "El tiempo ha terminado", function (msg) {
+    output.textContent = `Callback ejecutado: "${msg}"`;
+  });
 }
 
-function cortarRaices(done) {
-    console.log("1. Picando raíces retorcidas... (2s)");
-    setTimeout(() => {
-        console.log("✅ Raíces listas.");
-        done();
-    }, 2000);
+// SECCIÓN 2: OPERACIONES MATEMÁTICAS
+function operacion(a, b, op, callback) {
+  const resultados = {
+    "+": a + b,
+    "-": a - b,
+    "*": a * b,
+    "/": b !== 0 ? a / b : "Error: división por cero",
+  };
+  callback(resultados[op]);
 }
 
-function destilarEsencia(done) {
-    console.log("2. Destilando esencia espectral... (3s)");
-    setTimeout(() => {
-        console.log("✅ Esencia purificada.");
-        done();
-    }, 3000);
+function calcular() {
+  const a = parseFloat(document.getElementById("numA").value);
+  const b = parseFloat(document.getElementById("numB").value);
+  const op = document.getElementById("opSel").value;
+  const simbolos = { "+": "+", "-": "−", "*": "×", "/": "÷" };
+
+  operacion(a, b, op, function (resultado) {
+    document.getElementById("out2").textContent =
+      `${a} ${simbolos[op]} ${b} = ${resultado}`;
+  });
+}
+
+// SECCIÓN 3: PREPARACIÓN DE UNA RECETA
+function cortarIngredientes(callback) {
+  log("Cortando ingredientes...");
+  setTimeout(function () {
+    log("Ingredientes listos.");
+    callback();
+  }, 2000);
+}
+
+function cocinar(callback) {
+  log("Cocinando...");
+  setTimeout(function () {
+    log("Cocción completa.");
+    callback();
+  }, 3000);
+}
+
+function servirPlato() {
+  log("Plato servido");
+}
+
+function prepararReceta() {
+  document.getElementById("out3").textContent = "";
+  cortarIngredientes(function () {
+    cocinar(servirPlato);
+  });
+}
+
+function log(msg) {
+  const out = document.getElementById("out3");
+  out.textContent += (out.textContent ? "\n" : "") + msg;
 }

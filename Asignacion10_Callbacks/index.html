@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phantump Forest Ritual 🕯️</title>
-    <link rel="stylesheet" href="estilo.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Callbacks a10</title>
+  <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-    <div id="phantump-loader" class="center">
-        <div class="horn left"><div class="leaf"></div></div>
-        <div class="horn right"><div class="leaf"></div></div>
-        
-        <div class="head">
-            <div class="eye-socket left"><div class="eye-glow"></div></div>
-            <div class="eye-socket right"><div class="eye-glow"></div></div>
-            <div class="mouth-hole"></div>
-        </div>
+  <h1>Asignación 10 - Callbacks</h1>
 
-        <div class="ghost-core">
-            <div class="spirit-arm left"></div>
-            <div class="spirit-arm right"></div>
-            <div class="spirit-tail"></div>
-        </div>
-    </div>
+  <h2>1. Temporizador</h2>
+  <div class="row">
+    <label>Segundos:</label>
+    <select id="secs">
+      <option value="3">3</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+    </select>
+    <button onclick="iniciarTemporizador()">Iniciar</button>
+  </div>
+  <div class="output" id="out1">// presiona el botón</div>
 
-    <div class="mistic-container">
-        <h1>Ritual Fantasma</h1>
-        <p class="status">El bosque aguarda tu señal...</p>
-        
-        <div class="key-trigger">
-            <p>Presiona la tecla</p>
-            <kbd>F</kbd>
-        </div>
+  <h2>2. Operaciones Matemáticas con Callback</h2>
+  <div class="row">
+    <input type="number" id="numA" value="10" style="width:70px" />
+    <select id="opSel">
+      <option value="+">+</option>
+      <option value="-">−</option>
+      <option value="*">×</option>
+      <option value="/">÷</option>
+    </select>
+    <input type="number" id="numB" value="3" style="width:70px" />
+    <button onclick="calcular()">Calcular</button>
+  </div>
+  <div class="output" id="out2">// presiona el botón</div>
 
-        <div class="console-hint">
-            ⚠️ Revisa la <b>Consola (F12)</b> para ver la magia de los callbacks.
-        </div>
-    </div>
+  <h2>3. Preparación de una Receta</h2>
+  <button onclick="prepararReceta()">Preparar receta</button>
+  <div class="output" id="out3">// presiona el botón</div>
 
-    <script src="logica.js"></script>
+  <script src="logica.js"></script>
+
 </body>
 </html>
