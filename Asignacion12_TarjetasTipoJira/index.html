@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌸 Mulán Board 🌸</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <main>
+    <div class="card">
+
+      <header class="card__header">
+        <div class="card__eyebrow">
+          <span class="badge">Lista del Emperador</span>
+          <span class="task-counter"><span id="task-count">0</span> decretos</span>
+        </div>
+        <h1 class="card__title">Traer <span>Honor</span></h1>
+        <p class="card__subtitle">Organiza tus deberes · Prioriza y cumple con valor</p>
+      </header>
+
+      <div class="card__input-row">
+        <input
+          type="text"
+          id="task-input"
+          class="task-input"
+          placeholder="Nuevo deber familiar o militar…"
+          maxlength="120"
+          autocomplete="off"
+        />
+        
+        <select id="task-priority" class="task-select" aria-label="Prioridad del decreto">
+          <option value="baja">🏮 Baja</option>
+          <option value="media" selected>🌸 Media</option>
+          <option value="alta">⚔ Alta</option>
+        </select>
+
+        <button id="create-btn" class="btn-create">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5"  y1="12" x2="19" y2="12"/>
+          </svg>
+          Añadir
+        </button>
+      </div>
+
+      <p class="validation-msg" id="validation-msg" aria-live="polite"></p>
+      
+      <div class="divider"></div>
+
+      <div class="tasks-wrapper">
+        <ul class="task-list" id="task-list"></ul>
+
+        <div class="empty-state" id="empty-state">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+          <p>Tu pergamino de deberes está vacío.<br/>¡Añade uno para empezar!</p>
+        </div>
+      </div>
+
+      <footer class="card__footer">
+        <button id="clear-done-btn" class="btn-secondary">Archivar completados</button>
+        <span class="footer-hint">✎ editar · ✕ remover</span>
+      </footer>
+
+    </div>
+  </main>
+
+  <script src="logica.js"></script>
+</body>
+</html>
