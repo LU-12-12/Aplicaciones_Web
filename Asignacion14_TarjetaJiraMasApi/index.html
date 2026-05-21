@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>✨ Tiana's Place · Bayou Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <div class="card">
+
+    <header class="card__header">
+      <div class="card__eyebrow">
+        <span class="badge">✨ El Deseo de Tiana</span>
+        <span class="task-counter"><span id="task-count">0</span> recetas por cumplir</span>
+        <span id="api-status" class="api-status api-status--loading">conectando…</span>
+      </div>
+      <h1 class="card__title">Lograr mis <em>Sueños</em></h1>
+      <p class="card__subtitle">Trabaja duro, hazlo realidad · Haz clic para completar</p>
+    </header>
+
+    <div class="input-area">
+      <input
+        type="text"
+        id="taskInput"
+        class="task-input"
+        placeholder="Escribe un nuevo paso hacia tu restaurante…"
+        maxlength="120"
+        autocomplete="off"
+      />
+      <button id="addBtn" class="btn-create">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="3" stroke-linecap="round">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5"  y1="12" x2="19" y2="12"/>
+        </svg>
+        Cocinar
+      </button>
+    </div>
+
+    <p class="error-msg" id="validation-msg" aria-live="polite"></p>
+    
+    <div class="global-loader" id="global-loader">
+      <div class="loader-spinner"></div>
+      <span id="loader-text">Preparando el caldero…</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="task-list-wrapper">
+      <ul class="task-list" id="taskList"></ul>
+
+      <div class="empty-state" id="empty-state">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+          <path d="M12 2L2 22h20L12 2zM12 17h.01M12 10v4"/>
+        </svg>
+        <p>Tu libreta de recetas está vacía.<br/>¡No dejes de trabajar duro para lograr tu sueño!</p>
+      </div>
+    </div>
+
+    <footer class="card__footer">
+      <button id="clear-done-btn" class="btn-secondary">Limpiar completadas</button>
+      <span class="footer-hint">✎ editar · ✕ remover</span>
+    </footer>
+
+  </div>
+
+  <script src="logica.js"></script>
+</body>
+</html>
